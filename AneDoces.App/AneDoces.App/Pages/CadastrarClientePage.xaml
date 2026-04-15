@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AneDoces.App.Pages.CadastrarClientePage"
+             Title="Cadastrar Cliente"
+             BackgroundColor="#F8F2EC">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="14">
+
+            <Label Text="Novo Cliente"
+                   FontSize="26"
+                   FontAttributes="Bold"
+                   TextColor="#5A2E1F" />
+
+            <Label Text="Cadastre um cliente da AneDoces"
+                   FontSize="14"
+                   TextColor="#A67B5B" />
+
+            <Frame BackgroundColor="White"
+                   BorderColor="#F0E0D6"
+                   CornerRadius="20"
+                   Padding="16">
+
+                <VerticalStackLayout Spacing="12">
+
+                    <Entry x:Name="NomeEntry"
+                           Placeholder="Nome"
+                           TextColor="#5A2E1F" />
+
+                    <Entry x:Name="TelefoneEntry"
+                           Placeholder="Telefone"
+                           Keyboard="Telephone"
+                           TextColor="#5A2E1F" />
+
+                    <Entry x:Name="WhatsAppEntry"
+                           Placeholder="WhatsApp"
+                           Keyboard="Telephone"
+                           TextColor="#5A2E1F" />
+
+                    <Entry x:Name="EnderecoEntry"
+                           Placeholder="Endereço"
+                           TextColor="#5A2E1F" />
+
+                    <Editor x:Name="ObservacaoEditor"
+                            Placeholder="Observação"
+                            AutoSize="TextChanges"
+                            HeightRequest="100"
+                            TextColor="#5A2E1F" />
+
+                    <Button Text="Salvar Cliente"
+                            BackgroundColor="#6B3E2E"
+                            TextColor="White"
+                            CornerRadius="18"
+                            Clicked="OnSalvarClienteClicked" />
+
+                </VerticalStackLayout>
+            </Frame>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

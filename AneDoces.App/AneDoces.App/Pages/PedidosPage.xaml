@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AneDoces.App.Pages.PedidosPage"
+             Title="Pedidos"
+             BackgroundColor="#F8F2EC">
+
+    <Grid RowDefinitions="Auto,*">
+
+        <VerticalStackLayout Grid.Row="0"
+                             Padding="20,20,20,10"
+                             Spacing="6">
+            <Label Text="Pedidos"
+                   FontSize="26"
+                   FontAttributes="Bold"
+                   TextColor="#5A2E1F" />
+
+            <Label Text="Lista de pedidos cadastrados"
+                   FontSize="14"
+                   TextColor="#A67B5B" />
+        </VerticalStackLayout>
+
+        <CollectionView Grid.Row="1"
+                        x:Name="PedidosCollectionView"
+                        Margin="20,10,20,20"
+                        SelectionMode="Single"
+                        SelectionChanged="OnPedidoSelecionado">
+
+            <CollectionView.EmptyView>
+                <VerticalStackLayout Padding="20"
+                                     Spacing="10"
+                                     HorizontalOptions="Center"
+                                     VerticalOptions="Center">
+                    <Label Text="Nenhum pedido encontrado."
+                           FontSize="18"
+                           TextColor="#6B3E2E"
+                           HorizontalOptions="Center" />
+
+                    <Label Text="Cadastre pedidos no sistema para visualizar aqui."
+                           FontSize="14"
+                           TextColor="#A67B5B"
+                           HorizontalOptions="Center" />
+                </VerticalStackLayout>
+            </CollectionView.EmptyView>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame BackgroundColor="White"
+                           CornerRadius="22"
+                           Padding="16"
+                           Margin="0,0,0,12"
+                           BorderColor="#F0E0D6">
+
+                        <VerticalStackLayout Spacing="10">
+
+                            <Label Text="{Binding Cliente.Nome, StringFormat='Cliente: {0}'}"
+                                   FontSize="17"
+                                   FontAttributes="Bold"
+                                   TextColor="#6B3E2E" />
+
+                            <Label Text="{Binding Descricao, StringFormat='Descrição: {0}'}"
+                                   FontSize="14"
+                                   TextColor="#7A5A4A" />
+
+                            <Label Text="{Binding Valor, StringFormat='Valor: R$ {0:F2}'}"
+                                   FontSize="14"
+                                   TextColor="#7A5A4A" />
+
+                            <Label Text="{Binding Status, StringFormat='Status: {0}'}"
+                                   FontSize="14"
+                                   TextColor="#A67B5B" />
+
+                            <Label Text="{Binding DataPedido, StringFormat='Data: {0:dd/MM/yyyy}'}"
+                                   FontSize="13"
+                                   TextColor="#A67B5B" />
+
+                        </VerticalStackLayout>
+
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </Grid>
+</ContentPage>

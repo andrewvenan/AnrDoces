@@ -1,0 +1,6 @@
+@AneDoces.API_HostAddress = http://localhost:5079
+
+GET {{AneDoces.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

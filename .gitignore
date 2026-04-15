@@ -1,0 +1,97 @@
+# =========================
+# .NET / Visual Studio
+# =========================
+
+bin/
+obj/
+*.user
+*.rsuser
+*.suo
+*.userprefs
+
+# Build
+[Bb]uild/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+out/
+
+# Visual Studio
+.vs/
+*.VC.db
+*.opendb
+
+# Rider
+.idea/
+
+# VS Code
+.vscode/
+
+# Logs
+*.log
+
+# =========================
+# NuGet
+# =========================
+*.nupkg
+packages/
+.nuget/
+
+# =========================
+# Publish
+# =========================
+publish/
+*.publishsettings
+
+# =========================
+# ASP.NET Core
+# =========================
+appsettings.Development.json
+
+# =========================
+# MAUI / Mobile
+# =========================
+
+# Android
+*.apk
+*.aab
+*.keystore
+
+# iOS
+*.ipa
+
+# Mac
+*.dmg
+
+# =========================
+# Arquivos temporários
+# =========================
+*.tmp
+*.temp
+*.cache
+
+# =========================
+# Sistema
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Certificados
+# =========================
+*.pfx
+*.key
+*.pem
+
+# =========================
+# Banco de dados local
+# =========================
+*.mdf
+*.ldf
+
+# =========================
+# Outros
+# =========================
+*.bak
+*.old

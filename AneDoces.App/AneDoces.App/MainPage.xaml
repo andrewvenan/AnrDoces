@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AneDoces.App.MainPage"
+             BackgroundColor="#F8F2EC">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="30">
+
+            <Image Source="anedoces_logo.png"
+                   HeightRequest="180"
+                   HorizontalOptions="Center" />
+
+            <VerticalStackLayout Spacing="6">
+                <Label Text="Bem-vindo ao AneDoces 🍰"
+                       FontSize="24"
+                       FontAttributes="Bold"
+                       TextColor="#5A2E1F"
+                       HorizontalOptions="Center" />
+
+                <Label Text="Gerencie seus pedidos com carinho 💕"
+                       FontSize="14"
+                       TextColor="#A67B5B"
+                       HorizontalOptions="Center" />
+            </VerticalStackLayout>
+
+            <Grid ColumnDefinitions="*,*"
+                  RowDefinitions="Auto,Auto"
+                  ColumnSpacing="15"
+                  RowSpacing="15">
+
+                <Frame Grid.Row="0"
+                       Grid.Column="0"
+                       BackgroundColor="#FFFFFF"
+                       CornerRadius="25"
+                       Padding="20"
+                       BorderColor="#F0E0D6">
+
+                    <VerticalStackLayout HorizontalOptions="Center"
+                                         VerticalOptions="Center"
+                                         Spacing="8">
+                        <Label Text="👩‍🍳"
+                               FontSize="32"
+                               HorizontalOptions="Center" />
+
+                        <Label Text="Clientes"
+                               FontSize="16"
+                               FontAttributes="Bold"
+                               TextColor="#6B3E2E"
+                               HorizontalOptions="Center" />
+                    </VerticalStackLayout>
+
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnClientesClicked" />
+                    </Frame.GestureRecognizers>
+                </Frame>
+
+                <Frame Grid.Row="0"
+                       Grid.Column="1"
+                       BackgroundColor="#FFFFFF"
+                       CornerRadius="25"
+                       Padding="20"
+                       BorderColor="#F0E0D6">
+
+                    <VerticalStackLayout HorizontalOptions="Center"
+                                         VerticalOptions="Center"
+                                         Spacing="8">
+                        <Label Text="📦"
+                               FontSize="32"
+                               HorizontalOptions="Center" />
+
+                        <Label Text="Pedidos"
+                               FontSize="16"
+                               FontAttributes="Bold"
+                               TextColor="#6B3E2E"
+                               HorizontalOptions="Center" />
+                    </VerticalStackLayout>
+
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnPedidosClicked" />
+                    </Frame.GestureRecognizers>
+                </Frame>
+
+                <Frame Grid.Row="1"
+                       Grid.Column="0"
+                       BackgroundColor="#FFFFFF"
+                       CornerRadius="25"
+                       Padding="20"
+                       BorderColor="#F0E0D6">
+
+                    <VerticalStackLayout HorizontalOptions="Center"
+                                         VerticalOptions="Center"
+                                         Spacing="8">
+                        <Label Text="💰"
+                               FontSize="32"
+                               HorizontalOptions="Center" />
+
+                        <Label Text="Orçamentos"
+                               FontSize="16"
+                               FontAttributes="Bold"
+                               TextColor="#6B3E2E"
+                               HorizontalOptions="Center" />
+                    </VerticalStackLayout>
+
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnOrcamentosClicked" />
+                    </Frame.GestureRecognizers>
+                </Frame>
+
+                <Frame Grid.Row="1"
+                       Grid.Column="1"
+                       BackgroundColor="#FFFFFF"
+                       CornerRadius="25"
+                       Padding="20"
+                       BorderColor="#F0E0D6">
+
+                    <VerticalStackLayout HorizontalOptions="Center"
+                                         VerticalOptions="Center"
+                                         Spacing="8">
+                        <Label Text="🔍"
+                               FontSize="32"
+                               HorizontalOptions="Center" />
+
+                        <Label Text="Buscar"
+                               FontSize="16"
+                               FontAttributes="Bold"
+                               TextColor="#6B3E2E"
+                               HorizontalOptions="Center" />
+                    </VerticalStackLayout>
+
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnBuscarClicked" />
+                    </Frame.GestureRecognizers>
+                </Frame>
+
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

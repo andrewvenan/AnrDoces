@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AneDoces.App.Pages.BuscaPage"
+             Title="Busca Geral"
+             BackgroundColor="#F8F2EC">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="16">
+
+            <VerticalStackLayout Spacing="6">
+                <Label Text="Busca Geral"
+                       FontSize="26"
+                       FontAttributes="Bold"
+                       TextColor="#5A2E1F" />
+
+                <Label Text="Procure clientes, pedidos e orçamentos em um só lugar"
+                       FontSize="14"
+                       TextColor="#A67B5B" />
+            </VerticalStackLayout>
+
+            <Frame BackgroundColor="White"
+                   BorderColor="#F0E0D6"
+                   CornerRadius="20"
+                   Padding="16">
+
+                <VerticalStackLayout Spacing="12">
+                    <Entry x:Name="BuscaEntry"
+                           Placeholder="Digite um nome. Ex: Maria"
+                           TextColor="#5A2E1F"
+                           PlaceholderColor="#A67B5B"
+                           BackgroundColor="Transparent" />
+
+                    <Button Text="🔍 Buscar"
+                            BackgroundColor="#6B3E2E"
+                            TextColor="White"
+                            CornerRadius="18"
+                            Clicked="OnBuscarClicked" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <ActivityIndicator x:Name="LoadingIndicator"
+                               IsVisible="False"
+                               IsRunning="False"
+                               Color="#6B3E2E"
+                               HorizontalOptions="Center" />
+
+            <Label x:Name="ResultadoTitulo"
+                   Text=""
+                   FontSize="18"
+                   FontAttributes="Bold"
+                   TextColor="#6B3E2E"
+                   IsVisible="False" />
+
+            <!-- CLIENTES -->
+            <VerticalStackLayout x:Name="ClientesSection"
+                                 Spacing="10"
+                                 IsVisible="False">
+                <Label Text="Clientes"
+                       FontSize="20"
+                       FontAttributes="Bold"
+                       TextColor="#5A2E1F" />
+
+                <CollectionView x:Name="ClientesCollectionView"
+                                SelectionMode="None">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame BackgroundColor="White"
+                                   CornerRadius="18"
+                                   Padding="14"
+                                   Margin="0,0,0,10"
+                                   BorderColor="#F0E0D6">
+                                <VerticalStackLayout Spacing="6">
+                                    <Label Text="{Binding Nome}"
+                                           FontSize="17"
+                                           FontAttributes="Bold"
+                                           TextColor="#6B3E2E" />
+
+                                    <Label Text="{Binding Telefone, StringFormat='Telefone: {0}'}"
+                                           FontSize="13"
+                                           TextColor="#7A5A4A" />
+
+                                    <Label Text="{Binding WhatsApp, StringFormat='WhatsApp: {0}'}"
+                                           FontSize="13"
+                                           TextColor="#7A5A4A" />
+                                </VerticalStackLayout>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </VerticalStackLayout>
+
+            <!-- PEDIDOS -->
+            <VerticalStackLayout x:Name="PedidosSection"
+                                 Spacing="10"
+                                 IsVisible="False">
+                <Label Text="Pedidos"
+                       FontSize="20"
+                       FontAttributes="Bold"
+                       TextColor="#5A2E1F" />
+
+                <CollectionView x:Name="PedidosCollectionView"
+                                SelectionMode="None">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame BackgroundColor="White"
+                                   CornerRadius="18"
+                                   Padding="14"
+                                   Margin="0,0,0,10"
+                                   BorderColor="#F0E0D6">
+                                <VerticalStackLayout Spacing="6">
+                                    <Label Text="{Binding Cliente.Nome, StringFormat='Cliente: {0}'}"
+                                           FontSize="16"
+                                           FontAttributes="Bold"
+                                           TextColor="#6B3E2E" />
+
+                                    <Label Text="{Binding Descricao, StringFormat='Descrição: {0}'}"
+                                           FontSize="13"
+                                           TextColor="#7A5A4A" />
+
+                                    <Label Text="{Binding Valor, StringFormat='Valor: R$ {0:F2}'}"
+                                           FontSize="13"
+                                           TextColor="#7A5A4A" />
+
+                                    <Label Text="{Binding Status, StringFormat='Status: {0}'}"
+                                           FontSize="13"
+                                           TextColor="#A67B5B" />
+                                </VerticalStackLayout>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </VerticalStackLayout>
+
+            <!-- ORÇAMENTOS -->
+            <VerticalStackLayout x:Name="OrcamentosSection"
+                                 Spacing="10"
+                                 IsVisible="False">
+                <Label Text="Orçamentos"
+                       FontSize="20"
+                       FontAttributes="Bold"
+                       TextColor="#5A2E1F" />
+
+                <CollectionView x:Name="OrcamentosCollectionView"
+                                SelectionMode="None">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame BackgroundColor="White"
+                                   CornerRadius="18"
+                                   Padding="14"
+                                   Margin="0,0,0,10"
+                                   BorderColor="#F0E0D6">
+                                <VerticalStackLayout Spacing="6">
+                                    <Label Text="{Binding Cliente.Nome, StringFormat='Cliente: {0}'}"
+                                           FontSize="16"
+                                           FontAttributes="Bold"
+                                           TextColor="#6B3E2E" />
+
+                                    <Label Text="{Binding Descricao, StringFormat='Descrição: {0}'}"
+                                           FontSize="13"
+                                           TextColor="#7A5A4A" />
+
+                                    <Label Text="{Binding Valor, StringFormat='Valor: R$ {0:F2}'}"
+                                           FontSize="13"
+                                           TextColor="#7A5A4A" />
+
+                                    <Label Text="{Binding Status, StringFormat='Status: {0}'}"
+                                           FontSize="13"
+                                           TextColor="#A67B5B" />
+                                </VerticalStackLayout>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

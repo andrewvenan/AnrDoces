@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AneDoces.App.Pages.ClientesPage"
+             Title="Clientes"
+             BackgroundColor="#F8F2EC">
+
+    <Grid RowDefinitions="Auto,Auto,*">
+
+        <VerticalStackLayout Grid.Row="0"
+                             Padding="20,20,20,10"
+                             Spacing="6">
+            <Label Text="Clientes"
+                   FontSize="26"
+                   FontAttributes="Bold"
+                   TextColor="#5A2E1F" />
+
+            <Label Text="Lista de clientes cadastrados"
+                   FontSize="14"
+                   TextColor="#A67B5B" />
+        </VerticalStackLayout>
+
+        <Button Grid.Row="1"
+                Margin="20,0,20,10"
+                Text="＋ Novo Cliente"
+                BackgroundColor="#E8AEB7"
+                TextColor="#5A2E1F"
+                CornerRadius="16"
+                Clicked="OnNovoClienteClicked" />
+
+        <CollectionView Grid.Row="2"
+                        x:Name="ClientesCollectionView"
+                        Margin="20,0,20,20"
+                        SelectionMode="Single"
+                        SelectionChanged="OnClienteSelecionado">
+
+            <CollectionView.EmptyView>
+                <VerticalStackLayout Padding="20"
+                                     Spacing="10"
+                                     HorizontalOptions="Center"
+                                     VerticalOptions="Center">
+                    <Label Text="Nenhum cliente encontrado."
+                           FontSize="18"
+                           TextColor="#6B3E2E"
+                           HorizontalOptions="Center" />
+
+                    <Label Text="Verifique a API ou cadastre clientes no sistema."
+                           FontSize="14"
+                           TextColor="#A67B5B"
+                           HorizontalOptions="Center" />
+                </VerticalStackLayout>
+            </CollectionView.EmptyView>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame BackgroundColor="White"
+                           CornerRadius="22"
+                           Padding="16"
+                           Margin="0,0,0,12"
+                           BorderColor="#F0E0D6">
+
+                        <VerticalStackLayout Spacing="10">
+
+                            <Label Text="{Binding Nome}"
+                                   FontSize="18"
+                                   FontAttributes="Bold"
+                                   TextColor="#6B3E2E" />
+
+                            <Label Text="{Binding Telefone, StringFormat='Telefone: {0}'}"
+                                   FontSize="14"
+                                   TextColor="#7A5A4A" />
+
+                            <Label Text="{Binding WhatsApp, StringFormat='WhatsApp: {0}'}"
+                                   FontSize="14"
+                                   TextColor="#7A5A4A" />
+
+                            <Label Text="{Binding Endereco, StringFormat='Endereço: {0}'}"
+                                   FontSize="14"
+                                   TextColor="#7A5A4A" />
+
+                            <Label Text="{Binding Observacao, StringFormat='Obs: {0}'}"
+                                   FontSize="13"
+                                   TextColor="#A67B5B" />
+
+                            <Button Text="📲 WhatsApp"
+                                    BackgroundColor="#25D366"
+                                    TextColor="White"
+                                    CornerRadius="15"
+                                    Clicked="OnWhatsAppClicked" />
+
+                        </VerticalStackLayout>
+
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </Grid>
+</ContentPage>

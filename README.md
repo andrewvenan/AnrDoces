@@ -65,4 +65,4 @@ Aplicar conceitos reais de desenvolvimento full stack com C#, integrando backend
 
 ## 👨‍💻 Autor
 
-Desenvolvido por Andrew.
+Desenvolvido por Andrew Venancio.

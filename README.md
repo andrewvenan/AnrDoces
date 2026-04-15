@@ -60,8 +60,9 @@ Aplicar conceitos reais de desenvolvimento full stack com C#, integrando backend
 
 ## 📸 Preview
 
-(Adicione prints do app aqui)
+<img width="420" height="520" alt="image" src="https://github.com/user-attachments/assets/527e5b09-e805-4710-bce9-365e88ced557" />
+
 
 ## 👨‍💻 Autor
 
-Desenvolvido por Venan
+Desenvolvido por Andrew.
